@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: node-shop
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/<username>/evershop-manifests.git'
+    targetRevision: HEAD
+    path: charts/node-shop
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: shop-node
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
