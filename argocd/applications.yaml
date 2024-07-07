@@ -3,10 +3,14 @@ kind: Application
 metadata:
   name: node-shop
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/image-list: node-shop=a2barros/node-shop
+    argocd-image-updater.argoproj.io/evershop.update-strategy: latest
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/<username>/evershop-manifests.git'
+    repoURL: 'git@github.com:devopswave/argo-node-shop.git'
     targetRevision: HEAD
     path: charts/node-shop
   destination:

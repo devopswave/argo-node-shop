@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: <docker_username>/evershop
+  repository: a2barros78/node-shop
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -12,9 +12,9 @@ service:
 postgres:
   image: postgres:15-alpine
   volumeSize: 10Gi
-  database: evershopdb
-  user: evershopuser
-  password: evershopPassword123
+  database: evershop
+  user: postgres
+  password: postgres
 
 hpa:
   enabled: true

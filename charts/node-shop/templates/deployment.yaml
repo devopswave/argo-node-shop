@@ -18,6 +18,11 @@ spec:
       containers:
       - name: node-shop
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        resources:
+          requests:
+            cpu: "100m"
+          limits:
+            cpu: "500m"
         ports:
         - containerPort: 3000
         env:
