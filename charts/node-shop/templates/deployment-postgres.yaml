@@ -22,7 +22,7 @@ spec:
         command: ["mkdir", "-p", "/var/lib/postgresql/data/pgdata"]
         volumeMounts:
         - name: postgres-storage
-          mountPath: /var/lib/postgresql/data
+          mountPath: /var/lib/postgresql/data/pgdata
       containers:
       - image: {{ .Values.postgres.image }}
         name: postgres
