@@ -16,6 +16,13 @@ spec:
       labels:
         app: postgres
     spec:
+      initContainers:
+      - name: create-pgdata-dir
+        image: alpine
+        command: ["mkdir", "-p", "/var/lib/postgresql/data/pgdata"]
+        volumeMounts:
+        - name: postgres-storage
+          mountPath: /var/lib/postgresql/data
       containers:
       - image: {{ .Values.postgres.image }}
         name: postgres
