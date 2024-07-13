@@ -1,5 +1,6 @@
 apiVersion: v2
 name: node-shop
+icon: https://raw.githubusercontent.com/a2barros78/node-shop/main/public/favicon.png
 description: A Helm chart for deploying node-shop and PostgreSQL
 type: application
 version: 1.0.0

@@ -10,7 +10,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'git@github.com:devopswave/argo-node-shop.git'
+    repoURL: 'https://github.com/devopswave/argo-node-shop.git'
     targetRevision: HEAD
     path: charts/node-shop
   destination:
