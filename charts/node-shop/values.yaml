@@ -10,7 +10,7 @@ service:
   port: 80
 
 postgres:
-  image: postgres:15-alpine
+  image: postgres:16
   volumeSize: 10Gi
   database: evershop
   user: postgres
@@ -27,6 +27,6 @@ ingress:
   className: ""
   annotations: {}
   hosts:
-    - host: chart-example.local
+    - host: example.local
       paths: []
   tls: []
