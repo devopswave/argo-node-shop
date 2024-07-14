@@ -28,19 +28,13 @@ spec:
         env:
         - name: NODE_ENV
           value: "production"
-        - name: DATABASE_HOST
+        - name: DB_HOST
           value: "postgres"
-        - name: DATABASE_PORT
+        - name: DB_PORT
           value: "5432"
-        - name: DATABASE_USER
-          valueFrom:
-            secretKeyRef:
-              name: postgres-secret
-              key: postgres-user
-        - name: DATABASE_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: postgres-secret
-              key: postgres-password
+        - name: DB_USER
+          value: "{{ .Values.postgres.user }}"
+        - name: DB_PASSWORD
+          value: "{{ .Values.postgres.password }}"
         - name: DATABASE_NAME
           value: "{{ .Values.postgres.database }}"
