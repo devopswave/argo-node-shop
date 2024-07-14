@@ -12,6 +12,7 @@ service:
 postgres:
   image: postgres:16
   volumeSize: 10Gi
+  host: postgres
   database: evershop
   user: postgres
   password: postgres
@@ -22,11 +23,3 @@ hpa:
   maxReplicas: 10
   targetCPUUtilizationPercentage: 80
 
-ingress:
-  enabled: false
-  className: ""
-  annotations: {}
-  hosts:
-    - host: example.local
-      paths: []
-  tls: []
