@@ -20,11 +20,11 @@ spec:
       - image: {{ .Values.postgres.image }}
         name: postgres
         env:
-        - name: POSTGRES_DB
+        - name: DB_HOST
           value: "{{ .Values.postgres.database }}"
-        - name: POSTGRES_USER
+        - name: DB_USER
           value: "{{ .Values.postgres.user }}"
-        - name: POSTGRES_PASSWORD
+        - name: DB_PASSWORD
           value: "{{ .Values.postgres.password }}"
         ports:
         - containerPort: 5432
