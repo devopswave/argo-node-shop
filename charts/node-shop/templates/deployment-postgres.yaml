@@ -23,15 +23,9 @@ spec:
         - name: POSTGRES_DB
           value: "{{ .Values.postgres.database }}"
         - name: POSTGRES_USER
-          valueFrom:
-            secretKeyRef:
-              name: postgres-secret
-              key: postgres-user
+          value: "{{ .Values.postgres.user }}"
         - name: POSTGRES_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: postgres-secret
-              key: postgres-password
+          value: "{{ .Values.postgres.password }}"
         ports:
         - containerPort: 5432
           name: postgres
