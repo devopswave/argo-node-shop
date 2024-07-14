@@ -10,8 +10,9 @@ service:
   port: 80
 
 postgres:
-  image: postgres:15-alpine
+  image: postgres:16
   volumeSize: 10Gi
+  host: postgres
   database: evershop
   user: postgres
   password: postgres
